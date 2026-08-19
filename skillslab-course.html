@@ -350,11 +350,13 @@ html.dark-invert .no-invert img{filter:none}
 .quiz-num-unit{color:#6b7280;font-weight:600;font-size:0.95rem}
 .quiz-num-result{font-size:0.88rem;font-weight:700;width:100%;margin-top:0.5rem}
 .quiz-matching{display:flex;flex-direction:column;gap:0.75rem}
-.quiz-match-row{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap}
-.quiz-match-left{font-weight:600;color:#374151;min-width:120px}
-.quiz-match-arrow{color:#9ca3af}
-.quiz-match-select{border:1px solid #e2e5ea;border-radius:8px;padding:8px 12px;font-size:0.93rem;font-family:'Inter',system-ui,sans-serif;min-width:150px}
+.quiz-match-row{display:grid;grid-template-columns:minmax(0,200px) 16px minmax(0,1fr) auto;align-items:center;gap:0.75rem;padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+.quiz-match-left{font-weight:600;color:#374151;font-size:0.93rem;overflow-wrap:anywhere}
+.quiz-match-arrow{color:#d1d5db;text-align:center}
+.quiz-match-select{width:100%;min-width:0;border:1px solid #d1d5db;border-radius:8px;padding:8px 12px;font-size:0.93rem;font-family:'Inter',system-ui,sans-serif}
 .quiz-match-result{font-weight:700;font-size:0.85rem}
+@media (max-width:640px){.quiz-match-row{grid-template-columns:1fr auto}.quiz-match-arrow{display:none}.quiz-match-select{grid-column:1 / -1}}
+
 /* Slideshow pager */
 .quiz-slides{position:relative}
 .quiz-pager{display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-top:2rem}
@@ -22564,8 +22566,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Wetgeving</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_1_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option><option value="2">Bevat analyse, kritiek en debat over het recht. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="2">Bevat analyse, kritiek en debat over het recht. </option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_1_qz-2-0"></span>
                 </div>
@@ -22574,8 +22576,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Jurisprudentie</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_1_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option><option value="2">Bevat analyse, kritiek en debat over het recht. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="2">Bevat analyse, kritiek en debat over het recht. </option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_1_qz-2-1"></span>
                 </div>
@@ -22584,8 +22586,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Rechtswetenschappelijke literatuur</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_1_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option><option value="2">Bevat analyse, kritiek en debat over het recht. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="2">Bevat analyse, kritiek en debat over het recht. </option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_1_qz-2-2"></span>
                 </div>
@@ -22594,8 +22596,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Parlementaire geschiedenis</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_1_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option><option value="2">Bevat analyse, kritiek en debat over het recht. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Toont hoe het recht wordt toegepast en geïnterpreteerd. </option><option value="0">Laat zien wat het geldende recht is.</option><option value="2">Bevat analyse, kritiek en debat over het recht. </option><option value="3">Geeft inzicht in bedoeling en context van wetgeving. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_1_qz-2-3"></span>
                 </div>
@@ -22905,8 +22907,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Relevantie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_2_1_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_1_qz-5-0"></span>
                 </div>
@@ -22915,8 +22917,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Precisie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_2_1_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_1_qz-5-1"></span>
                 </div>
@@ -22925,8 +22927,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Richtinggevendheid </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_2_1_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_1_qz-5-2"></span>
                 </div>
@@ -22935,8 +22937,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Haalbaarheid </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_2_1_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_1_qz-5-3"></span>
                 </div>
@@ -22945,8 +22947,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Deelvragen</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="4" onchange="quizMatchChange('les_ond_2_1_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">De vraag maakt duidelijk welke aanpak of methode nodig is. </option><option value="4">De stappen die samen helpen om de hoofdvraag te beantwoorden.</option><option value="3">De vraag is te beantwoorden binnen tijd en met beschikbare bronnen.</option><option value="1">De vraag is helder, juridisch geformuleerd en afgebakend.</option><option value="0">De vraag doet ertoe, wetenschappelijk en maatschappelijk. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_1_qz-5-4"></span>
                 </div>
@@ -23190,8 +23192,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">EN (AND)</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_1_2_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="2">Sluit irrelevante begrippen uit </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Sluit irrelevante begrippen uit </option><option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_2_qz-5-0"></span>
                 </div>
@@ -23200,8 +23202,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">OF (OR)</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_1_2_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="2">Sluit irrelevante begrippen uit </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Sluit irrelevante begrippen uit </option><option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_2_qz-5-1"></span>
                 </div>
@@ -23210,8 +23212,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">NIET (NOT)</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_1_2_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="2">Sluit irrelevante begrippen uit </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Sluit irrelevante begrippen uit </option><option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_2_qz-5-2"></span>
                 </div>
@@ -23220,8 +23222,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Filters</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_1_2_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="2">Sluit irrelevante begrippen uit </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Sluit irrelevante begrippen uit </option><option value="0">Beperkt resultaten tot bronnen waarin beide termen voorkomen</option><option value="1">Vergroot resultaten door synoniemen te combineren </option><option value="3">Beperken op datum, rechtsgebied of type publicatie </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_2_qz-5-3"></span>
                 </div>
@@ -23417,8 +23419,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Leerstuk als onderzoekskader </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_2_qz-2-0"></span>
                 </div>
@@ -23427,8 +23429,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Theoretische grondslag van het recht</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_2_qz-2-1"></span>
                 </div>
@@ -23437,8 +23439,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niet-juridische theorie</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_2_qz-2-2"></span>
                 </div>
@@ -23447,8 +23449,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Combinatie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je gebruikt meerdere niveaus samen in één onderzoekskader.</option><option value="2">Je gebruikt bijvoorbeeld theorie uit sociologie, economie of bestuurskunde.</option><option value="0">Je gebruikt bestaande juridische leerstukken om criteria te formuleren.</option><option value="1">Je gebruikt bijvoorbeeld rechtszekerheid of rechtsgelijkheid als kader.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_2_qz-2-3"></span>
                 </div>
@@ -23668,8 +23670,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Juridisch-dogmatisch onderzoek </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_2_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_3_qz-2-0"></span>
                 </div>
@@ -23678,8 +23680,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Rechtsvergelijkend onderzoek </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_2_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_3_qz-2-1"></span>
                 </div>
@@ -23688,8 +23690,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Empirisch-juridisch onderzoek </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_2_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_3_qz-2-2"></span>
                 </div>
@@ -23698,8 +23700,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Rechtshistorisch onderzoek</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_2_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Je onderzoekt hoe het recht zich door de tijd heeft ontwikkeld.</option><option value="0">Je analyseert wetgeving, rechtspraak en literatuur om het geldende recht te beschrijven of interpreteren.</option><option value="1">Je vergelijkt rechtsstelsels of rechtsgebieden om overeenkomsten en verschillen te analyseren.</option><option value="2">Je onderzoekt hoe het recht in de praktijk werkt, bijvoorbeeld met interviews of enquêtes.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_2_3_qz-2-3"></span>
                 </div>
@@ -23967,8 +23969,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Empirisch-juridisch onderzoek </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_3_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option><option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_1_qz-2-0"></span>
                 </div>
@@ -23977,8 +23979,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Jurisprudentieanalyse </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_3_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option><option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_1_qz-2-1"></span>
                 </div>
@@ -23987,8 +23989,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Literatuurstudie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_3_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option><option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_1_qz-2-2"></span>
                 </div>
@@ -23997,8 +23999,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Rechtsvergelijkend onderzoek </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_3_1_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option><option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Je ordent wetenschappelijke publicaties en vergelijkt standpunten en argumenten.</option><option value="3">Je vergelijkt rechtsstelsels met een vergelijkingskader en let op contextverschillen. </option><option value="0">Je verzamelt interviews, enquêtes of bestaande gegevens en verantwoordt privacy en betrouwbaarheid.</option><option value="1">Je selecteert uitspraken en analyseert ze aan de hand van vaste punten.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_1_qz-2-3"></span>
                 </div>
@@ -24194,8 +24196,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Eerste stap</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_3_2_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Juridisch probleem</option><option value="4">Aanpak</option><option value="0">Brede context</option><option value="3">Onderzoeksvraag</option><option value="2">Afbakening</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Afbakening</option><option value="4">Aanpak</option><option value="1">Juridisch probleem</option><option value="3">Onderzoeksvraag</option><option value="0">Brede context</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-1-0"></span>
                 </div>
@@ -24204,8 +24206,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Tweede stap</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_3_2_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Juridisch probleem</option><option value="4">Aanpak</option><option value="0">Brede context</option><option value="3">Onderzoeksvraag</option><option value="2">Afbakening</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Afbakening</option><option value="4">Aanpak</option><option value="1">Juridisch probleem</option><option value="3">Onderzoeksvraag</option><option value="0">Brede context</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-1-1"></span>
                 </div>
@@ -24214,8 +24216,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Derde stap</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_3_2_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Juridisch probleem</option><option value="4">Aanpak</option><option value="0">Brede context</option><option value="3">Onderzoeksvraag</option><option value="2">Afbakening</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Afbakening</option><option value="4">Aanpak</option><option value="1">Juridisch probleem</option><option value="3">Onderzoeksvraag</option><option value="0">Brede context</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-1-2"></span>
                 </div>
@@ -24224,8 +24226,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Vierde stap</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_3_2_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Juridisch probleem</option><option value="4">Aanpak</option><option value="0">Brede context</option><option value="3">Onderzoeksvraag</option><option value="2">Afbakening</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Afbakening</option><option value="4">Aanpak</option><option value="1">Juridisch probleem</option><option value="3">Onderzoeksvraag</option><option value="0">Brede context</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-1-3"></span>
                 </div>
@@ -24234,8 +24236,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Vijfde stap</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="4" onchange="quizMatchChange('les_ond_3_2_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Juridisch probleem</option><option value="4">Aanpak</option><option value="0">Brede context</option><option value="3">Onderzoeksvraag</option><option value="2">Afbakening</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Afbakening</option><option value="4">Aanpak</option><option value="1">Juridisch probleem</option><option value="3">Onderzoeksvraag</option><option value="0">Brede context</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-1-4"></span>
                 </div>
@@ -24282,8 +24284,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Onderbouwing </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_3_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="2">Formuleert wat je beweert.</option><option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option><option value="2">Formuleert wat je beweert.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-3-0"></span>
                 </div>
@@ -24292,8 +24294,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Redenering </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_3_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="2">Formuleert wat je beweert.</option><option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option><option value="2">Formuleert wat je beweert.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-3-1"></span>
                 </div>
@@ -24302,8 +24304,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Standpunt </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_3_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="2">Formuleert wat je beweert.</option><option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option><option value="2">Formuleert wat je beweert.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-3-2"></span>
                 </div>
@@ -24312,8 +24314,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Tussenconclusie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_3_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="2">Formuleert wat je beweert.</option><option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Noemt de bronnen, regels, uitspraken of analyses waarop de bewering steunt.</option><option value="1">Legt uit waarom de onderbouwing het standpunt ondersteunt.</option><option value="3">Geeft aan wat het argument betekent voor de deelvraag of hoofdvraag. </option><option value="2">Formuleert wat je beweert.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_2_qz-3-3"></span>
                 </div>
@@ -24658,8 +24660,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Beschrijvend blijven </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_3_3_qz',0,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_3_qz-0-0"></span>
                 </div>
@@ -24668,8 +24670,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Eenzijdig brongebruik </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_3_3_qz',0,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_3_qz-0-1"></span>
                 </div>
@@ -24678,8 +24680,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Impliciete aanname </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_3_3_qz',0,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_3_qz-0-2"></span>
                 </div>
@@ -24688,8 +24690,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Te brede onderzoeksvraag </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ond_3_3_qz',0,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Alleen bronnen die strengere regulering ondersteunen, worden in de analyse gebruikt.</option><option value="2">De regeling is effectief, maar het begrip “effectief” wordt niet uitgelegd.</option><option value="0">“Auteur A stelt dit. Auteur B stelt dat. Auteur C kiest een derde benadering.”</option><option value="3">“Hoe werkt privacybescherming in het digitale tijdperk?”</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_3_3_qz-0-3"></span>
                 </div>
@@ -25172,8 +25174,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Inhoud</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_sam_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="1">Je stemt je selectie eerst af met een teamgenoot.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Je stemt je selectie eerst af met een teamgenoot.</option><option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_2_qz-2-0"></span>
                 </div>
@@ -25182,8 +25184,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Proces </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_sam_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="1">Je stemt je selectie eerst af met een teamgenoot.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Je stemt je selectie eerst af met een teamgenoot.</option><option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_2_qz-2-1"></span>
                 </div>
@@ -25192,8 +25194,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Tijd </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_sam_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="1">Je stemt je selectie eerst af met een teamgenoot.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Je stemt je selectie eerst af met een teamgenoot.</option><option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_2_qz-2-2"></span>
                 </div>
@@ -25202,8 +25204,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Communicatie </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_sam_2_2_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="1">Je stemt je selectie eerst af met een teamgenoot.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">Je stemt je selectie eerst af met een teamgenoot.</option><option value="0">Je levert een analyse van vijf relevante uitspraken op.</option><option value="3">Je geeft via Teams door als je vertraging oploopt.</option><option value="2">Je levert je onderdeel vrijdag om 12.00 uur aan.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_2_qz-2-3"></span>
                 </div>
@@ -25399,8 +25401,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Overleg </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_sam_2_3_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_3_qz-1-0"></span>
                 </div>
@@ -25409,8 +25411,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Meningsvorming </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_sam_2_3_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_3_qz-1-1"></span>
                 </div>
@@ -25419,8 +25421,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Besluit </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_sam_2_3_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_3_qz-1-2"></span>
                 </div>
@@ -25429,8 +25431,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Draagvlak </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_sam_2_3_qz',1,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Teamleden kunnen zich voldoende vinden in de uitkomst om ermee verder te werken.</option><option value="2">Je maakt een duidelijke keuze over wat er gaat gebeuren.</option><option value="0">Je deelt informatie of stemt af, zonder dat er al een keuze wordt gemaakt.</option><option value="1">Je wisselt argumenten en perspectieven uit.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_2_3_qz-1-3"></span>
                 </div>
@@ -27102,8 +27104,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">AI</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ai_1_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Genereert nieuwe output op basis van patronen in data.</option><option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="4">Genereert nieuwe output op basis van patronen in data.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_1_1_qz-3-0"></span>
                 </div>
@@ -27112,8 +27114,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Symbolic AI</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ai_1_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Genereert nieuwe output op basis van patronen in data.</option><option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="4">Genereert nieuwe output op basis van patronen in data.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_1_1_qz-3-1"></span>
                 </div>
@@ -27122,8 +27124,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Machine learning</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ai_1_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Genereert nieuwe output op basis van patronen in data.</option><option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="4">Genereert nieuwe output op basis van patronen in data.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_1_1_qz-3-2"></span>
                 </div>
@@ -27132,8 +27134,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Deep learning</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ai_1_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Genereert nieuwe output op basis van patronen in data.</option><option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="4">Genereert nieuwe output op basis van patronen in data.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_1_1_qz-3-3"></span>
                 </div>
@@ -27142,8 +27144,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Generatieve AI</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="4" onchange="quizMatchChange('les_ai_1_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Genereert nieuwe output op basis van patronen in data.</option><option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="2">Leert patronen herkennen in voorbeelden en data. </option><option value="1">Werkt met vooraf geprogrammeerde regels en logica.</option><option value="3">Werkt met neurale netwerken met meerdere lagen. </option><option value="0">Verzamelnaam voor systemen die taken uitvoeren die we met menselijke intelligentie associëren.</option><option value="4">Genereert nieuwe output op basis van patronen in data.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_1_1_qz-3-4"></span>
                 </div>
@@ -27566,8 +27568,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niveau 1</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ai_2_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option><option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_1_qz-3-0"></span>
                 </div>
@@ -27576,8 +27578,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niveau 2</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ai_2_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option><option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_1_qz-3-1"></span>
                 </div>
@@ -27586,8 +27588,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niveau 3</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ai_2_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option><option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_1_qz-3-2"></span>
                 </div>
@@ -27596,8 +27598,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niveau 4</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ai_2_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option><option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_1_qz-3-3"></span>
                 </div>
@@ -27606,8 +27608,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Niveau 5</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="4" onchange="quizMatchChange('les_ai_2_1_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">GenAI voert deeltaken uit, jij beoordeelt - Je gebruikt genAI voor onderdelen en controleert kritisch.</option><option value="4">GenAI als co-pilot - Je gebruikt genAI breed en blijft verantwoordelijk.</option><option value="1">GenAI voor eindredactie - Je gebruikt genAI voor taal en formulering van eigen tekst.</option><option value="2">GenAI voor ideeën en structuur - Je gebruikt genAI voor ideeën, invalshoeken of outlines.</option><option value="0">Geen genAI - Je gebruikt geen genAI tijdens de opdracht.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_1_qz-3-4"></span>
                 </div>
@@ -28087,8 +28089,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Taal verbeteren van eigen tekst </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ai_2_3_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="2">Risico op vervanging.</option><option value="3">Vervangend gebruik.</option><option value="0">Meestal ondersteunend.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Vervangend gebruik.</option><option value="2">Risico op vervanging.</option><option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="0">Meestal ondersteunend.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_3_qz-5-0"></span>
                 </div>
@@ -28097,8 +28099,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Structuur toetsen van eigen opzet </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ai_2_3_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="2">Risico op vervanging.</option><option value="3">Vervangend gebruik.</option><option value="0">Meestal ondersteunend.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Vervangend gebruik.</option><option value="2">Risico op vervanging.</option><option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="0">Meestal ondersteunend.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_3_qz-5-1"></span>
                 </div>
@@ -28107,8 +28109,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Argumenten laten kiezen door genAI </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ai_2_3_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="2">Risico op vervanging.</option><option value="3">Vervangend gebruik.</option><option value="0">Meestal ondersteunend.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Vervangend gebruik.</option><option value="2">Risico op vervanging.</option><option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="0">Meestal ondersteunend.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_3_qz-5-2"></span>
                 </div>
@@ -28117,8 +28119,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Conclusie laten bepalen door genAI </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="3" onchange="quizMatchChange('les_ai_2_3_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="2">Risico op vervanging.</option><option value="3">Vervangend gebruik.</option><option value="0">Meestal ondersteunend.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Vervangend gebruik.</option><option value="2">Risico op vervanging.</option><option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="0">Meestal ondersteunend.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_3_qz-5-3"></span>
                 </div>
@@ -28127,8 +28129,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Tekst gebruiken zonder begrip </span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="4" onchange="quizMatchChange('les_ai_2_3_qz',5,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="2">Risico op vervanging.</option><option value="3">Vervangend gebruik.</option><option value="0">Meestal ondersteunend.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="3">Vervangend gebruik.</option><option value="2">Risico op vervanging.</option><option value="4">Onvoldoende eigenaarschap.</option><option value="1">Ondersteunend, mits je zelf beslist.</option><option value="0">Meestal ondersteunend.</option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ai_2_3_qz-5-4"></span>
                 </div>
@@ -28842,8 +28844,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Expertise</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_sam_1_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">verschillen in kennis of ervaring</option><option value="1">verschillen in status of invloed</option><option value="2">verschillen in mening of waarden </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">verschillen in status of invloed</option><option value="0">verschillen in kennis of ervaring</option><option value="2">verschillen in mening of waarden </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_1_2_qz-3-0"></span>
                 </div>
@@ -28852,8 +28854,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Positie</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_sam_1_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">verschillen in kennis of ervaring</option><option value="1">verschillen in status of invloed</option><option value="2">verschillen in mening of waarden </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">verschillen in status of invloed</option><option value="0">verschillen in kennis of ervaring</option><option value="2">verschillen in mening of waarden </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_1_2_qz-3-1"></span>
                 </div>
@@ -28862,8 +28864,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Standpunt</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_sam_1_2_qz',3,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="0">verschillen in kennis of ervaring</option><option value="1">verschillen in status of invloed</option><option value="2">verschillen in mening of waarden </option>
+                    <option value="-1">— Kies —</option>
+                    <option value="1">verschillen in status of invloed</option><option value="0">verschillen in kennis of ervaring</option><option value="2">verschillen in mening of waarden </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_sam_1_2_qz-3-2"></span>
                 </div>
@@ -29035,8 +29037,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Oriënterend lezen</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="0" onchange="quizMatchChange('les_ond_1_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option><option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option><option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_3_qz-2-0"></span>
                 </div>
@@ -29045,8 +29047,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Selectief lezen</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="1" onchange="quizMatchChange('les_ond_1_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option><option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option><option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_3_qz-2-1"></span>
                 </div>
@@ -29055,8 +29057,8 @@ Je maakt een planningsdocument in een aantal stappen. Klik op de blokken voor me
                   <span class="quiz-match-left">Verdiepend lezen</span>
                   <span class="quiz-match-arrow">→</span>
                   <select class="quiz-match-select" data-li="2" onchange="quizMatchChange('les_ond_1_3_qz',2,this)">
-                    <option value="-1">Kies...</option>
-                    <option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option><option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option>
+                    <option value="-1">— Kies —</option>
+                    <option value="0">Titels, tussenkopjes en samenvattingen globaal doornemen.</option><option value="2">Nauwkeurig analyseren van kernbronnen voor je probleem. </option><option value="1">Gericht passages lezen die aansluiten bij je onderwerp. </option>
                   </select>
                   <span class="quiz-match-result" id="match-res-les_ond_1_3_qz-2-2"></span>
                 </div>
